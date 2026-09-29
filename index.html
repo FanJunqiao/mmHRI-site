@@ -1,583 +1,164 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="M4Human">
-  <meta name="keywords" content="Human Mesh Reconstruction, mmwave Radar Dataset">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>M4Human Dataset</title>
-
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
-
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <meta name="description" content="mmHRI: Towards Privacy-Preserving Human-Robot Interaction with Millimeter-Wave Radar. Radar-guided human perception and closed-loop robot manipulation through privacy barriers.">
+  <meta name="theme-color" content="#178575">
+  <title>mmHRI — Privacy-Preserving Human-Robot Interaction</title>
   <link rel="stylesheet" href="./static/css/index.css">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
+  <script defer src="./static/js/index.js"></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="publication-header container">
+    <h1><span class="project-name"><span class="project-logo" aria-hidden="true"></span>mmHRI</span><span class="paper-title">Towards Privacy-Preserving Human-Robot Interaction<br class="desktop-break"> with Millimeter-Wave Radar</span></h1>
+    <p class="publication-status">Under Review</p>
+    <p class="authors"><span>Junqiao Fan<sup>1</sup></span>,
+        <span>Yuxuan Hu<sup>2</sup></span>,
+        <span>Bofan Lyu<sup>2</sup></span>,
+        <span>Yanshuo Lu<sup>2</sup></span>,
+        <span>Pengfei Liu<sup>2</sup></span>,
+        <span>Jiarui Zhang<sup>1</sup></span>,
+        <br><span>Fangqiang Ding<sup>3</sup></span>,
+        <span>Lihua Xie<sup>1</sup></span>,
+        <span>Gen Li<sup>4,†</sup></span>,
+        <span>Jianfei Yang<sup>2,†</sup></span></p>
+    <div class="affiliations">
+      <p><sup>1</sup> School of Electrical and Electronic Engineering, Nanyang Technological University</p>
+      <p><sup>2</sup> School of Mechanical and Aerospace Engineering, Nanyang Technological University</p>
+      <p><sup>3</sup> The Hong Kong University of Science and Technology (Guangzhou)</p>
+      <p><sup>4</sup> School of AI and Robotics, Hunan University</p>
+      <p class="correspondence"><sup>†</sup> Corresponding authors: <a href="mailto:ligen@g.skku.edu">Gen Li</a>, <a href="mailto:jianfei.yang@ntu.edu.sg">Jianfei Yang</a></p>
+    </div>
+    <nav class="publication-links" aria-label="Project resources">
+      <a class="button" href="./static/paper/mmHRI.pdf" target="_blank" rel="noopener"><span aria-hidden="true">↗</span> Paper</a>
+      <a class="button" href="#video" id="watch-video"><span aria-hidden="true">▶</span> Video</a>
+      <a class="button" href="" aria-disabled="true" title="Code coming soon"><span aria-hidden="true">&lt;/&gt;</span> Code</a>
+    </nav>
+  </header>
 
-<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://github.com/NTU-AIoT-Lab">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
+  <main id="main">
+    <section class="container teaser-section" aria-label="Research motivation">
+      <figure class="paper-figure figure-side" id="figure-1">
+      <a class="figure-image" href="./static/images/mmhri/fig1-teaser.jpg" target="_blank" rel="noopener" aria-label="Open Figure 1 at full resolution">
+        <img src="./static/images/mmhri/fig1-teaser.jpg" width="2594" height="2085" alt="Motivation of privacy-preserving mmHRI using mmWave radar for human sensing. Unlike conventional vision-based HRI that fails under occlusion, mmHRI senses human intent through privacy curtains to coordinate object delivery without directly observing humans. This supports privacy-sensitive applications such as hospitals, restaurants, and unmanned stores." fetchpriority="high">
       </a>
+      <figcaption><span class="figure-label">Figure 1</span><h3>Human intent, beyond visual barriers.</h3><p>Motivation of privacy-preserving mmHRI using mmWave radar for human sensing. Unlike conventional vision-based HRI that fails under occlusion, mmHRI senses human intent through privacy curtains to coordinate object delivery without directly observing humans. This supports privacy-sensitive applications such as hospitals, restaurants, and unmanned stores.</p></figcaption>
+    </figure>
+    </section>
 
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://github.com/xyanchen/WiFi-CSI-Sensing-Benchmark">
-            SenseFi
-          </a>
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://github.com/NTU-AIoT-Lab/EfficientFi">
-            EfficientFi
-          </a>
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="">
-            MetaFi
-          </a>
+    <section class="section section-tinted" id="video" aria-labelledby="video-title">
+      <div class="container video-container">
+        <h2 id="video-title">mmHRI Video Demo</h2>
+        <p class="section-intro">Radar-guided, privacy-preserving human–robot interaction.</p>
+        <div class="video-player">
+          <video id="mmhri-video" controls playsinline preload="metadata" poster="./static/images/mmhri/video-poster.jpg" aria-label="mmHRI demonstration video">
+            <source src="./mmhri.mp4" type="video/mp4">
+            Your browser does not support embedded video. <a href="./mmhri.mp4">Download the mmHRI video</a>.
+          </video>
+          <button class="video-play" type="button" aria-label="Play mmHRI video" hidden><span class="play-icon" aria-hidden="true">▶</span><span>Play mmHRI</span></button>
         </div>
+        <p id="video-message" class="video-message" role="status" hidden></p>
       </div>
-    </div>
+    </section>
 
-  </div>
-</nav> -->
+    <section class="section container abstract" id="abstract" aria-labelledby="abstract-title">
+      <h2 id="abstract-title">Abstract</h2>
+      <p>Assistive robots increasingly operate in many human-centered environments and perform various human-robot interaction (HRI) tasks, such as object delivery. However, most existing HRI systems rely on RGB cameras that continuously observe humans to respond to non-verbal commands, such as hand gestures. This raises privacy concerns in privacy-critical environments, such as hospital wards or restaurants, where direct camera observation of humans is restricted. To develop privacy-preserving HRI, we leverage millimeter-wave (mmWave) radar, which can sense human motion through privacy barriers without identifiable imagery. We propose mmHRI, the first multi-modal robot manipulation framework that achieves mmWave radar-guided privacy-preserving HRI. mmHRI introduces two key designs to mitigate the sparsity and temporal inconsistency of radar data in cluttered robot manipulation environments. First, we propose a dual-stream architecture that jointly learns from unfiltered raw radar tensors and radar point clouds to estimate both human actions and 3D poses. To mitigate signal inconsistency, mmHRI further incorporates a memory-based state-space model (MSSM) that retains historical radar features to reduce abrupt changes in pose/action. These estimated human states are then converted into structured textual robot instructions, which control a vision-language-action (VLA) policy for closed-loop robot manipulation and human-aware reactions. Our evaluation covers human action recognition and closed-loop delivery and retrieval. In the privacy-preserving curtain setting, mmHRI achieves 85.09% action-recognition accuracy, outperforming existing radar-based alternatives. Robot trials further demonstrate successful delivery and retrieval under visual occlusion, with stable task performance across unseen subjects, clutter configurations, and environments.</p>
+    </section>
 
+    <section class="section container" id="system" aria-labelledby="system-title">
+      <h2 id="system-title">System Setup</h2>
+      <p class="section-intro">Cameras observe the robot workspace. mmWave radar senses human intent in the private area.</p>
+      <figure class="paper-figure figure-wide" id="figure-2">
+      <a class="figure-image" href="./static/images/mmhri/fig2-system-setup.jpg" target="_blank" rel="noopener" aria-label="Open Figure 2 at full resolution">
+        <img src="./static/images/mmhri/fig2-system-setup.jpg" width="3364" height="1526" alt="Left: Physical robot system setup and the mmWave sensing unit. Middle: Two privacy-preserving scenes, i.e., hospital ward and office. Right: Three gesture/pose based human-robot-interaction decision-making tasks. We show different radar signals that the robot may refer to for different reactions." loading="lazy">
+      </a>
+      <figcaption><span class="figure-label">Figure 2</span><h3>A robot platform for privacy-preserving interaction</h3><p>Left: Physical robot system setup and the mmWave sensing unit. Middle: Two privacy-preserving scenes, i.e., hospital ward and office. Right: Three gesture/pose based human-robot-interaction decision-making tasks. We show different radar signals that the robot may refer to for different reactions.</p></figcaption>
+    </figure>
+    </section>
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">
-            <span style="color: #3ecba5; font-family: 'Castoro', serif; font-weight: 700; letter-spacing: 0.04em;">
-              M4Human
-            </span>
-          </h1>
-            <script>
-            document.addEventListener('DOMContentLoaded', function () {
-              const title = document.querySelector('.publication-title');
-              if (!title) return;
-
-              const icon = document.createElement('img');
-              const fontLink = document.createElement('link');
-              fontLink.rel = 'stylesheet';
-              fontLink.href = 'https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Playfair+Display:wght@700&family=Montserrat:wght@700&family=Cormorant+Garamond:wght@700&family=Merriweather:wght@700&display=swap';
-              document.head.appendChild(fontLink);
-
-              const titleText = title.querySelector('span');
-              if (titleText) {
-                titleText.style.fontFamily = "'Poppins', sans-serif"; // clean modern
-                // titleText.style.fontFamily = "'Playfair Display', serif"; // elegant
-                // titleText.style.fontFamily = "'Montserrat', sans-serif"; // bold tech
-                // titleText.style.fontFamily = "'Cormorant Garamond', serif"; // classic
-                // titleText.style.fontFamily = "'Merriweather', serif"; // academic
-              }
-              icon.src = './static/images/icon1.png';
-              icon.alt = 'M4Human icon';
-              icon.style.width = '3em';
-              icon.style.height = '3em';
-              icon.style.marginRight = '0.1em';
-              icon.style.verticalAlign = 'middle';
-
-              title.insertBefore(icon, title.firstChild);
-            });
-            </script>
-          <h1 class="title is-1 publication-title"><span style="color: #424242; font-size: 0.8em;">A Large-Scale Multimodal mmWave Radar Benchmark for Human Mesh Reconstruction</span></h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://scholar.google.com.hk/citations?hl=en&user=5cEG4tIAAAAJ">Junqiao Fan</a><sup style="font-size: 0.6em;">1</sup>,
-              </span>
-            <span class="author-block">
-              <a href="">Yunjiao Zhou</a><sup style="font-size: 0.6em;">1</sup>,
-              </span>
-            <span class="author-block">
-              <a href="">Yizhuo Yang</a><sup style="font-size: 0.6em;">1</sup>,
-              </span>
-            <span class="author-block">
-              <a href="">Xinyuan Cui</a><sup style="font-size: 0.6em;">2,3</sup>,
-              </span>
-            <span class="author-block">
-              <a href="">Jiarui Zhang</a><sup style="font-size: 0.6em;">1</sup>,
-              </span>
-            <br/>
-            <span class="author-block">
-              <a href="https://personal.ntu.edu.sg/elhxie/">Lihua Xie</a><sup style="font-size: 0.6em;">1</sup>,
-              </span>
-            <span class="author-block">
-              <a href="https://marsyang.site/">Jianfei Yang</a><sup style="font-size: 0.6em;">1</sup>,
-              </span>
-            <span class="author-block">
-              <a href="https://christopherlu.github.io/">Chris Xiaoxuan Lu</a><sup style="font-size: 0.6em;">4</sup>,
-              </span>
-            <span class="author-block">
-              <a href="https://toytiny.github.io/">Fangqiang Ding</a><sup style="font-size: 0.6em;">2,5,&dagger;</sup>,
-              </span>
-            </div>
-          
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup style="font-size: 0.7em;">1</sup>NTU,</span>
-            <span class="author-block"><sup style="font-size: 0.7em;">2</sup>University of Edinburgh,</span>
-            <span class="author-block"><sup style="font-size: 0.7em;">3</sup>UPenn,</span>
-            <span class="author-block"><sup style="font-size: 0.7em;">4</sup>UCL,</span>
-            <span class="author-block"><sup style="font-size: 0.7em;">5</sup>MIT</span>
-            
-          </div>
-
-        
-
-          <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <a href="http://arxiv.org/abs/2512.12378"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
-              <span class="link-block">
-                <a href="https://github.com/FanJunqiao/M4Human"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>Dataset</span>
-                </a>
-              </span>
-              <!-- Video Link. -->
-              <!-- <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=T6TnKgGARgc"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span> -->
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="https://github.com/FanJunqiao/M4Human"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
-                  <span>Code</span>
-                  </a>
-            </div>
-            
-          <!-- <br />
-          <br />
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><b>Under Review</b></span>
-          </div> -->
+    <section class="section section-tinted" id="method" aria-labelledby="method-title">
+      <div class="container">
+        <h2 id="method-title">The mmHRI Framework</h2>
+        <p class="section-intro">From complementary radar measurements to human-aware robot actions.</p>
+        <figure class="paper-figure figure-wide" id="figure-3">
+      <a class="figure-image" href="./static/images/mmhri/fig3-framework.jpg" target="_blank" rel="noopener" aria-label="Open Figure 3 at full resolution">
+        <img src="./static/images/mmhri/fig3-framework.jpg" width="3758" height="2135" alt="Overview of mmHRI. Radar measurements are first preprocessed into RDT tensors and RPC. The dual-stream radar human perception (DRP) then extracts motion and geometry patterns from both modalities, which are fused to jointly predict action and 3D poses. The human-aware text reasoning (HTR) then converts the estimated human states into structured robot instructions, controlling the downstream VLA policy for different actions." loading="lazy">
+      </a>
+      <figcaption><span class="figure-label">Figure 3</span><h3>Dual-stream perception meets robot manipulation</h3><p>Overview of mmHRI. Radar measurements are first preprocessed into RDT tensors and RPC. The dual-stream radar human perception (DRP) then extracts motion and geometry patterns from both modalities, which are fused to jointly predict action and 3D poses. The human-aware text reasoning (HTR) then converts the estimated human states into structured robot instructions, controlling the downstream VLA policy for different actions.</p></figcaption>
+    </figure>
+        <div class="method-notes">
+          <article><h3>Dual-stream radar perception (DRP Fusion)</h3><p>Raw radar tensors capture motion patterns, while radar point clouds preserve spatial structure for joint action and 3D pose estimation.</p></article>
+          <article><h3>Memory state-space model (MSSM)</h3><p>Historical radar features reduce temporal inconsistency and abrupt changes in the estimated human state.</p></article>
+          <article><h3>Human-aware text reasoning (HTR)</h3><p>Human states become structured instructions that condition a vision-language-action policy for closed-loop manipulation.</p></article>
         </div>
-        <br />
-          <div style="font-size: 2em;">
-            <span style="color: #cb933e;"><b>Accepted by CVPR 2026</b></span>
-          </div>
-          <br />
+        <figure class="paper-figure figure-side" id="figure-4">
+      <a class="figure-image" href="./static/images/mmhri/fig4-radar-modalities.jpg" target="_blank" rel="noopener" aria-label="Open Figure 4 at full resolution">
+        <img src="./static/images/mmhri/fig4-radar-modalities.jpg" width="3451" height="2035" alt="Visualization of the complementary radar modalities used by the dual-stream model. The DT and RT maps preserve motion-sensitive Doppler patterns, whereas the RPC retains 3D spatial structure for pose and root estimation. Synchronized RGB images are shown for visual reference." loading="lazy">
+      </a>
+      <figcaption><span class="figure-label">Figure 4</span><h3>Complementary motion and geometry</h3><p>Visualization of the complementary radar modalities used by the dual-stream model. The DT and RT maps preserve motion-sensitive Doppler patterns, whereas the RPC retains 3D spatial structure for pose and root estimation. Synchronized RGB images are shown for visual reference.</p></figcaption>
+    </figure>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
+    <section class="section container" id="results" aria-labelledby="results-title">
+      <h2 id="results-title">Radar Perception Results</h2>
+      <p class="section-intro">mmHRI achieves 85.09% action-recognition accuracy under privacy occlusion and 74.91% under cross-environment occlusion.</p>
+      <div class="table-scroll" role="region" aria-label="Table 1: Radar perception performance" tabindex="0"><table>
+  <caption><span class="figure-label">Table 1</span><strong>Performance on the radar perception dataset.</strong> HPE is evaluated under clear visibility, and HAR is evaluated under clear visibility, privacy occlusion, and cross-environment occlusion.</caption>
+  <thead><tr><th rowspan="2" scope="col">Methods</th><th colspan="2" scope="colgroup">HPE · Clear Visibility</th><th colspan="4" scope="colgroup">HAR · Clear Visibility</th><th colspan="4" scope="colgroup">HAR · Occlusion (Privacy)</th><th colspan="4" scope="colgroup">HAR · Occlusion (Cross-Env)</th></tr>
+  <tr><th scope="col">MPJPE (cm)</th><th scope="col">TE (cm)</th><th scope="col">ACC (%)</th><th scope="col">FPR (%)</th><th scope="col">Static-F1 (%)</th><th scope="col">HPE Jitter</th><th scope="col">ACC (%)</th><th scope="col">FPR (%)</th><th scope="col">Static-F1 (%)</th><th scope="col">HPE Jitter</th><th scope="col">ACC (%)</th><th scope="col">FPR (%)</th><th scope="col">Static-F1 (%)</th><th scope="col">HPE Jitter</th></tr></thead><tbody><tr class="table-group"><th colspan="15" scope="colgroup">RGB</th></tr><tr><th scope="row">RGB (YOLOv.) + AGCN</th><td>—</td><td>—</td><td>96.02</td><td>4.55</td><td>97.06</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr><tr class="table-group"><th colspan="15" scope="colgroup">mmWave Radar</th></tr><tr><th scope="row">PointTrans. (RPC) + AGCN</th><td>7.40</td><td>6.26</td><td>86.18</td><td>16.18</td><td>89.58</td><td>3.52</td><td>72.49</td><td>23.11</td><td>88.36</td><td>3.91</td><td>31.06</td><td>40.84</td><td>67.91</td><td>6.08</td></tr><tr><th scope="row">RadHAR (RPC)</th><td>—</td><td>—</td><td>87.06</td><td>11.95</td><td>77.11</td><td>—</td><td>62.18</td><td>26.09</td><td>82.50</td><td>—</td><td>27.61</td><td>33.10</td><td>61.81</td><td>—</td></tr><tr><th scope="row">Waveman (RT)</th><td>—</td><td>—</td><td>91.65</td><td>4.47</td><td>91.33</td><td>—</td><td>79.65</td><td>12.67</td><td>86.95</td><td>—</td><td>62.31</td><td>0.00</td><td>82.28</td><td>—</td></tr><tr class="table-group"><th colspan="15" scope="colgroup">Ours</th></tr><tr class="ours"><th scope="row">mmHRI (Fusion)</th><td>7.54</td><td>6.01</td><td>92.56</td><td>4.55</td><td>95.14</td><td>3.54</td><td>81.45</td><td><strong>5.00</strong></td><td>88.69</td><td>3.45</td><td>68.94</td><td>20.42</td><td>85.83</td><td>5.15</td></tr><tr class="ours"><th scope="row">mmHRI (Fusion + MSSM)</th><td><strong>4.25</strong></td><td><strong>3.12</strong></td><td><strong>96.51</strong></td><td><strong>1.38</strong></td><td><strong>97.25</strong></td><td><strong>2.83</strong></td><td><strong>85.09</strong></td><td>9.90</td><td><strong>90.17</strong></td><td><strong>3.25</strong></td><td><strong>74.91</strong></td><td><strong>11.27</strong></td><td><strong>86.09</strong></td><td><strong>4.42</strong></td></tr></tbody></table></div>
+      <p class="table-note">ACC: accuracy. FPR: false-positive rate. HPE: human pose estimation. HAR: human action recognition. MPJPE: mean per-joint position error. TE: translation error. Jitter is reported in centimeters; — denotes an unreported or unavailable result.</p>
+    </section>
 
+    <section class="section container" id="robot-trials" aria-labelledby="trials-title">
+      <h2 id="trials-title">Real-World Robot Trials</h2>
+      <p class="section-intro">Side decisions, object delivery, box retrieval, and collision avoidance under clear visibility and visual occlusion.</p>
+      <div class="table-scroll" role="region" aria-label="Table 2: Real-world robot trials" tabindex="0"><table>
+  <caption><span class="figure-label">Table 2</span><strong>Performance on real-world robot trials.</strong> PA and Success report the perception-only and end-to-end stage success rates. MA reports the success rate over 30 manipulation-only trials with ground-truth human states.</caption>
+  <thead><tr><th rowspan="2" scope="col">Methods</th><th colspan="3" scope="colgroup">Side Decision &amp; Grasping</th><th colspan="3" scope="colgroup">Object Delivery</th><th colspan="3" scope="colgroup">Box Retrieval</th><th colspan="3" scope="colgroup">Collision Avoidance</th></tr><tr><th scope="col">PA</th><th scope="col">MA</th><th scope="col">Success</th><th scope="col">PA</th><th scope="col">MA</th><th scope="col">Success</th><th scope="col">PA</th><th scope="col">MA</th><th scope="col">Success</th><th scope="col">PA</th><th scope="col">MA</th><th scope="col">Success</th></tr></thead><tbody><tr class="table-group"><th colspan="13" scope="colgroup">Clear Visibility</th></tr><tr><th scope="row">RGB + π<sub>0.5</sub></th><td>30/30</td><td rowspan="2">26/30</td><td>26/30</td><td>30/30</td><td rowspan="2">27/30</td><td>27/30</td><td>27/30</td><td rowspan="2">30/30</td><td>27/30</td><td>30/30</td><td rowspan="2">30/30</td><td>30/30</td></tr><tr><th scope="row">mmWave + π<sub>0.5</sub></th><td>30/30</td><td>26/30</td><td>29/30</td><td>26/30</td><td>29/30</td><td>29/30</td><td>30/30</td><td>30/30</td></tr><tr class="table-group"><th colspan="13" scope="colgroup">Occlusion</th></tr><tr><th scope="row">RGB + π<sub>0.5</sub></th><td>0/30</td><td rowspan="2">26/30</td><td>0/30</td><td>0/30</td><td rowspan="2">27/30</td><td>0/30</td><td>0/30</td><td rowspan="2">30/30</td><td>0/30</td><td>0/30</td><td rowspan="2">30/30</td><td>0/30</td></tr><tr><th scope="row">mmWave + π<sub>0.5</sub></th><td>28/30</td><td>25/30</td><td>28/30</td><td>25/30</td><td>29/30</td><td>29/30</td><td>30/30</td><td>30/30</td></tr><tr class="table-group"><th colspan="13" scope="colgroup">Occlusion (Cross-Environment)</th></tr><tr><th scope="row">RGB + π<sub>0.5</sub></th><td>0/30</td><td rowspan="2">23/30</td><td>0/30</td><td>0/30</td><td rowspan="2">26/30</td><td>0/30</td><td>0/30</td><td rowspan="2">28/30</td><td>0/30</td><td>0/30</td><td rowspan="2">30/30</td><td>0/30</td></tr><tr><th scope="row">mmWave + π<sub>0.5</sub></th><td>28/30</td><td>21/30</td><td>25/30</td><td>22/30</td><td>26/30</td><td>25/30</td><td>25/30</td><td>25/30</td></tr></tbody></table></div>
+      <figure class="paper-figure figure-wide" id="figure-5">
+      <a class="figure-image" href="./static/images/mmhri/fig5-robot-trials.jpg" target="_blank" rel="noopener" aria-label="Open Figure 5 at full resolution">
+        <img src="./static/images/mmhri/fig5-robot-trials.jpg" width="3730" height="1347" alt="Qualitative examples of the human states and corresponding robot operations. The columns show an azimuth wave, waiting, approaching, and a radial wave; the camera views show object grasping, tray delivery, and tray retrieval during the interaction." loading="lazy">
+      </a>
+      <figcaption><span class="figure-label">Figure 5</span><h3>Human intent guides the interaction sequence</h3><p>Qualitative examples of the human states and corresponding robot operations. The columns show an azimuth wave, waiting, approaching, and a radial wave; the camera views show object grasping, tray delivery, and tray retrieval during the interaction.</p></figcaption>
+    </figure>
+    </section>
 
-<!-- Demo video link-->
- <section class="hero teaser png">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-          <img src="./static/images/teaser.jpg"
-                  class="interpolation-image"
-                  alt="Interpolate start reference image."/>
-        <br/>
-
-      
-      <div class="content has-text-justified">
-        <p>Overview of M4Human: the largest multimodal dataset for high-fidelity mmWave radar-based human motion sensing.
-           It covers diverse free-space motions (e.g., rehabilitation, exercise, and sports) beyond simple in-place actions, with high-quality marker-based motion annotations.
-            Such diversity supports a broad range of human sensing tasks, including tracking, human mesh recovery, action recognition, and human motion generation, 
-          as well as privacy-preserving applications in elderly care, rehabilitation, robotics, and VR gaming.
-        </p>
-      </h2>
-    </div>
-  </div>
-</section>
-
-
-
-
-<!-- <section class="hero is-light is-small">
-  <div class="hero-body">
+    <section class="section section-tinted" id="generalization" aria-labelledby="generalization-title">
+      <div class="container">
+        <h2 id="generalization-title">Robustness &amp; Generalization</h2>
+        <p class="section-intro">Evaluating radar perception with unseen subjects and changes in tabletop clutter.</p>
+        <div class="table-scroll table-compact" role="region" aria-label="Table 3: Generalization to unseen subjects" tabindex="0"><table>
+  <caption><span class="figure-label">Table 3</span><strong>Generalization to unseen subjects.</strong></caption>
+  <thead><tr><th scope="col">Subject</th><th scope="col">Delivery Activation</th><th scope="col">Retrieve Activation</th><th scope="col">Collision Avoidance</th></tr></thead><tbody><tr><th scope="row">Seen Subject</th><td>28/30</td><td>29/30</td><td>30/30</td></tr><tr><th scope="row">Unseen Subject 1</th><td>30/30</td><td>30/30</td><td>30/30</td></tr><tr><th scope="row">Unseen Subject 2</th><td>27/30</td><td>26/30</td><td>30/30</td></tr></tbody></table></div>
+        <div class="table-scroll table-compact" role="region" aria-label="Table 4: Generalization to unseen tabletop clutter" tabindex="0">
+          <table>
+            <caption><span class="figure-label">Table 4</span><strong>Generalization to unseen tabletop clutter.</strong></caption>
+            <thead><tr><th scope="col">Clutter</th><th scope="col">Delivery Activation</th><th scope="col">Retrieve Activation</th><th scope="col">Collision Avoidance</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">No Additional Clutter</th><td>28/30</td><td>29/30</td><td>30/30</td></tr>
+              <tr><th scope="row">Metal Box</th><td>28/30</td><td>26/30</td><td>30/30</td></tr>
+              <tr><th scope="row">Tall Cup Box</th><td>26/30</td><td>30/30</td><td>30/30</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <figure class="paper-figure figure-side" id="figure-6">
+      <a class="figure-image" href="./static/images/mmhri/fig6-robustness.jpg" target="_blank" rel="noopener" aria-label="Open Figure 6 at full resolution">
+        <img src="./static/images/mmhri/fig6-robustness.jpg" width="2905" height="2355" alt="Real-world robustness evaluation setups. (a) Cross-table-clutter settings with a metal box and an occluding paper box. (b) Cross-subject settings with two unseen subjects." loading="lazy">
+      </a>
+      <figcaption><span class="figure-label">Figure 6</span><h3>Testing beyond the training setup</h3><p>Real-world robustness evaluation setups. (a) Cross-table-clutter settings with a metal box and an occluding paper box. (b) Cross-subject settings with two unseen subjects.</p></figcaption>
+    </figure>
+      </div>
+    </section>
+  </main>
+  <footer>
     <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
+      <p>mmHRI · Under Review</p>
+      <p class="template-credit">Website adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, licensed under <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
     </div>
-  </div>
-</section>
--->
-
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Human mesh reconstruction (HMR) provides direct insights into body-environment interaction, 
-            which enables various immersive applications. While existing large-scale HMR datasets rely 
-            heavily on line-of-sight RGB input, vision-based sensing is limited by occlusion, lighting 
-            variation, and privacy concerns. To overcome these limitations, recent efforts have explored 
-            radio-frequency (RF) mmWave radar for privacy-preserving indoor human sensing. However, current 
-            radar datasets are constrained by sparse skeleton labels, limited scale, and simple in-place actions. 
-            
-          </p>
-          <p>
-            To advance the HMR research community, we introduce M4Human, the current largest-scale (661K-frame) 
-            (9 times prior largest) multimodal benchmark, 
-            featuring high-resolution mmWave radar, RGB, and depth data. 
-            M4Human provides both raw radar tensors (RT) and processed radar point clouds (RPC) 
-            to enable research across different levels of RF signal granularity. M4Human includes
-             high-quality motion capture (MoCap) annotations with 3D meshes and global trajectories, 
-             and spans 20 subjects and 50 diverse actions, including in-place, sit-in-place, and free-space 
-             sports or rehabilitation movements. We establish benchmarks on both RT and RPC modalities, as well as 
-             multimodal fusion with RGB-D modalities. Extensive results highlight the significance of 
-             M4Human for radar-based human modeling while revealing persistent challenges under fast, 
-             unconstrained motion. The dataset and code will be released after the paper publication.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-  
-      <div class="columns is-centered">
-      <div class="column is-full-width">
-        <div class="columns is-centered has-text-centered">
-          <h2 class="title is-3">Sensor System Setup</h2>
-        </div>
-          <img src="./static/images/system_setup.png"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-          <div class="content has-text-justified">
-            <p>
-              <b>Overview of the system setup</b>: M4Human designs a multimodal sensing platform with high-precision 
-              marker-based MoCap system. Appropriate calibration and synchronization workflow are designed for 
-              accurate alignment between modalities and annotations.
-            </p>
-          </div>
-      </div>
-      </div>
-  </div>
-</section>
-
-
-<!-- Demo card link-->
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-          <h2 class="title is-3">Dataset Videos</h2>
-        </div>
-     <div class="content has-text-justified">
-            <p>
-              Video of multi-Modal sensor data and MoCap Mesh annotations in M4Human. We verify the accuracy of alignment between mmWave radar data and MoCap annotations under diverse actions.
-            </p>
-          </div>
-    <h2 class="title is-4">In-Place Daily Actions</h2>
-    <div class="scroll-row" id="dataset-gallery" data-act-ids="2,5,8,10,12" data-fps="10" data-frames="30"></div>
-    <h2 class="title is-4">In-Place Rehabilitation Actions</h2>
-    <div class="scroll-row" id="dataset-gallery1" data-act-ids="21,22,24,28,29,33,35" data-fps="10" data-frames="30"></div>
-    <h2 class="title is-4">Non-In-Place Daily Actions</h2>
-    <div class="scroll-row" id="dataset-gallery2" data-act-ids="36,39,49" data-fps="10" data-frames="100"></div>
-    <h2 class="title is-4">Non-In-Place Sports Actions</h2>
-    <div class="scroll-row" id="dataset-gallery3" data-act-ids="43,45,46,47,50" data-fps="10" data-frames="100"></div>
-  </div>
-</section>
-
-
-
-  
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-  
-      <div class="columns is-centered">
-      <div class="column is-full-width">
-        <div class="columns is-centered has-text-centered">
-          <h2 class="title is-3">Dataset Scale</h2>
-        </div>
-          
-          <img src="./static/images/scale.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-
-          <div class="content has-text-justified">
-            <p>
-              <b>Comparison of M4Human with prior datasets</b> († denotes non-public data): 
-              Overall, M4Human is the largest RF-based dataset with multi-granularity motion 
-              annotations across diverse sensing tasks. It provides both raw radar tensors 
-              (RT) and filtered radar point clouds (RPC) for high-fidelity HMR. Human body annotations are obtained with a high-precision marker-based 
-               MoCap system rather than RGB(D) images (entries marked with *) 
-              </p>
-          </div>
-      </div>
-      </div>
-  </div>
-</section>
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-  
-      <div class="columns is-centered">
-      <div class="column is-full-width">
-          <!-- <h2 class="title is-3">Action Set</h2> -->
-          <img src="./static/images/actions.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-
-          <div class="columns is-centered has-text-centered">
-            <p>
-              <b>Action set in M4Human.</b> M4Human extends
-               beyond simple in-place activities to complex, non-in-place rehabilitation and 
-               sports. 
-              </p>
-          </div>
-
-      </div>
-      </div>
-  </div>
-</section>
-
-  
-<!-- <section class="hero video">
-  <div class="container is-max-desktop">
-  
-      <div class="columns is-centered">
-      <div class="column is-full-width">
-        <div class="columns is-centered has-text-centered">
-          <h2 class="title is-3">mmWave HMR Benchmark (Main)</h2>
-        </div>
-          <video id="teaser" autoplay muted loop playsinline height="100%">
-            <source src="./static/videos/demo_small.mp4"
-                    type="video/mp4">
-          </video>
-
-          <h2 class="subtitle has-text-centered">
-            We provide visualization of frame-level Human Mesh Reconstruction (HMR) Results.
-          </h2>
-      </div>
-      </div>
-  </div>
-</section> -->
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <h2 class="title is-3">mmWave HMR Prediction Results</h2>
-    </div>
-    <div class="scroll-row" id="pred-gallery"></div>
-  </div>
-  <h2 class="subtitle has-text-centered">
-    We provide visualization of frame-level Human Mesh Reconstruction (HMR) Results.
-  </h2>
-</section>
-
-<!-- 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" muted playsinline preload="metadata" height="100%" data-fps="30">
-        <source src="./static/videos/demo_small.mp4" type="video/mp4">
-      </video>
-
-      <div class="field" style="margin-top: 1rem;">
-        <input id="teaser-slider" class="slider is-fullwidth is-large" type="range" min="0" max="1" step="1" value="0">
-        <p class="has-text-centered">Frame <span id="teaser-frame">0</span>/<span id="teaser-frame-total">0</span></p>
-      </div>
-
-      <h2 class="subtitle has-text-centered">
-        We provide visualization of frame-level Human Mesh Reconstruction Results.
-      </h2>
-    </div>
-  </div>
-</section> -->
-
-  
-
-<!-- <section class="section">
-  <div class="container is-max-desktop">
-    
-    <div class="columns is-centered has-text-centered">
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/T6TnKgGARgc?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-    </div>
-  </div>
-</section>
--->
-<!--要改watch?v= 成 embed/；原链接里&后的部分删掉变成?rel=0&amp;showinfo=0-->
-
-<section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>@article{fan2025m4human,
-    title={M4Human: A Large-Scale Multimodal mmWave Radar Benchmark for Human Mesh Reconstruction},
-    author={Fan, Junqiao and Zhou, Yunjiao and Yang, Yizhuo and Cui, Xinyuan and Zhang, Jiarui and Xie, Lihua and Yang, Jianfei and Lu, Chris Xiaoxuan and Ding, Fangqiang},
-    journal={arXiv preprint arXiv:2512.12378},
-    year={2025}
-  }
-      </code></pre>
-    </div>
-  </section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-  
-      <div class="columns is-centered">
-      <div class="column is-full-width">
-          <h2 class="title is-3">License</h2>
-          <div class="content has-text-justified">
-            <p>
-              M4Human is released under the <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>.
-            </p>
-      </div>
-      </div>
-  </div>
-</section>
-
-<!-- <section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">Citation</h2>
-    <pre><code>@inproceedings{
-      yang2023mm,
-      title={MM-Fi: Multi-Modal Non-Intrusive 4D Human Dataset for Versatile Wireless Sensing},
-      author={Yang, Jianfei and Huang, He and Zhou, Yunjiao and Chen, Xinyan and Xu, Yuecong 
-              and Yuan, Shenghai and Zou, Han and Lu, Chris Xiaoxuan and Xie, Lihua},
-      booktitle={Thirty-seventh Conference on Neural Information Processing Systems Datasets and Benchmarks Track},
-      year={2023},
-      url={https://openreview.net/forum?id=1uAsASS1th}
-  }</code></pre>
-    <pre><code>enter bitex here@article{fan2024diffusion,
-      title={Diffusion Model is a Good Pose Estimator from 3D RF-Vision},
-      author={Fan, Junqiao and Yang, Jianfei and Xu, Yuecong and Xie, Lihua},
-      journal={arXiv preprint arXiv:2403.16198},
-      year={2024}
-}</code></pre>
-  </div>
-</section> -->
-
-
-<footer class="footer">
-  <div class="container">
-    <!-- <div class="content has-text-centered">
-      <a class="icon-link"
-         href="">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/NTU-AIoT-Lab" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div> -->
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>. And it is borrowed from the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> 
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-
+  </footer>
 </body>
 </html>
